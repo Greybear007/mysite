@@ -1,0 +1,39 @@
+<!-- templates/post_detail.html  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>A Django girl's Adventure</title>
+	<link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//djangogirlstaipei.github.io/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="header">
+		<h1 class="site-title text-=center">
+			<a href="http://127.0.0.1:8081/">A Django girl's Adventure</a>
+		</h1>
+	</div>
+	<div class="container post post_detail">
+		<div clas="post-deading">
+			<h1 class="title"><a href="{% url "post_detail" id=post.id %}">{{ post.title }}</a>
+			</h1>
+			<div class="date">{{ post.create_at|date:'Y / m / d'}}</div>
+			<div class="location">
+				<i class="fa fa-map-marker"></i>
+				<span id="location-content">{{ post.location  }}</span>
+			</div>
+			<div id="map-canvas" class="map"></div>
+			<div class="post-content">
+				{{ post.content }}
+			</div>
+			<hr class="fancy-line">
+			<img class="photo" src="{{ post.photo }}" alt="=" width="880" height="495">	
+		</div>
+		<script src="ttps://atts.w3cschool.cn/attachments/image/cimg/js?v=3.exp&libraries=places&sensor=false""></script>
+		<script src="https://atts.w3cschool.cn/attachments/image/cimg/map.js"></script>
+	</div>
+</body>
+</html>

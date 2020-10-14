@@ -18,11 +18,13 @@ from django.urls import path
 
 
 from django.contrib import admin
-from trips.views import hello_world, home
+from trips.views import hello_world, home, post_detail
 
 urlpatterns = (
 	url(r'^$', home, name='home'),
 	url(r'^admin/', admin.site.urls),
 	url(r'^hello/$', hello_world, name='hello_world'),
+	url(r'^post_detail/(?P<id>\d+)/$', post_detail, name='post_detail'),
+
 )
 

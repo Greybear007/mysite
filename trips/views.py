@@ -14,3 +14,7 @@ def home(request):
 	context = {'post_list': post_list}
 	return render(request, 'home.html', context=context)
 
+def post_detail(request, id):
+	post = Post.objects.get(id=id)
+	context = {'post': post}
+	return render(request, 'post_detail.html', context=context)
